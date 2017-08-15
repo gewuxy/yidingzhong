@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets.main {
+        jni.srcDirs = [] // This prevents the auto generation of Android.mk
+        res.srcDirs = ['res']
+        java.srcDirs = ['src']
+        jniLibs.srcDirs = ['libs']
+        manifest.srcFile 'AndroidManifest.xml'
+
+    }
+
+}
+//依赖管理
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

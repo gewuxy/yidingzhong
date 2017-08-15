@@ -1,0 +1,4 @@
+include ':app'
+include ':uikit'
+include ':LameLibrary'
+project(':LameLibrary').projectDir = new File('libs/LameLibrary')

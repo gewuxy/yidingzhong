@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">一定中</string>
+    <string name="home">首页</string>
+    <string name="category">类别</string>
+    <string name="latest_lottery">最新开奖</string>
+    <string name="shopping_car">购物车</string>
+    <string name="wode">我的</string>
+    <string name="name_label">尊敬的会员：</string>
+    <string name="chongzhihaoli">充值好礼</string>
+    <string name="gain_points">赚取积分</string>
+    <string name="chongzhi_tips">新用户首次充值50元领现金红包</string>
+    <string name="points_tips">账户积分在积分商城可随意兑换礼品</string>
+    <string name="processing">进行中</string>
+    <string name="processed">已揭晓</string>
+    <string name="to_be_receive">待收货</string>
+    <string name="to_be_published">待晒单</string>
+    <string name="duobao_record">夺宝记录</string>
+    <string name="lucky_record">幸运记录</string>
+    <string name="scan_qrcode">扫一扫</string>
+    <string name="home_label">一定中夺宝商城</string>
+    <string name="latest_lottery_label">最新开奖</string>
+    <string name="category_label">全部类别</string>
+    <string name="shopping_car_label">购物车</string>
+</resources>

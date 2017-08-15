@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bg_toolbar</item>
+        <item name="colorPrimaryDark">@color/bg_toolbar</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarSize">48dp</item>
+        <item name="android:windowAnimationStyle">@style/windowAnimation</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+    </style>
+
+    <style name="windowAnimation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_exit</item>
+    </style>
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Background for the search query section (e.g. EditText) -->
+        <item name="queryBackground">@drawable/searchview_bg</item>
+        <!-- Background for the actions section (e.g. voice, submit) -->
+        <item name="submitBackground">@color/gray_9e9e9e</item>
+        <!-- Close button icon -->
+        <!--<item name="closeIcon">...</item>-->
+        <!-- Search button icon -->
+        <item name="searchIcon">@null</item>
+        <!-- Go/commit button icon -->
+    </style>
+
+    <color name="gray_9e9e9e">#9e9e9e</color>
+</resources>
