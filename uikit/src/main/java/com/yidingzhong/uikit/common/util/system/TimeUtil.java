@@ -377,4 +377,26 @@ public class TimeUtil {
         }
         return returnValue;
     }
+
+    /**
+     * 得到本月的第一天
+     */
+    public static String getMonthFirstDay() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, calendar
+                .getActualMinimum(Calendar.DAY_OF_MONTH));
+        SimpleDateFormat simpleFormate = new SimpleDateFormat("yyyy-MM-dd");
+        return simpleFormate.format(calendar.getTime());
+    }
+
+    /**
+     * 得到本月的最后一天
+     */
+    public static String getMonthLastDay() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, calendar
+                .getActualMaximum(Calendar.DAY_OF_MONTH));
+        SimpleDateFormat simpleFormate = new SimpleDateFormat("yyyy-MM-dd");
+        return simpleFormate.format(calendar.getTime());
+    }
 }

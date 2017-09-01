@@ -109,6 +109,10 @@ public class BaseActivity extends AppCompatActivity {
                 }
             });
         }
+
+        if(toolbar.getVisibility() != View.VISIBLE){
+            toolbar.setVisibility(View.VISIBLE);
+        }
     }
 
     public void setToolBar(int toolbarId, int titleId, int logoId) {

@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+    <com.yidingzhong.uikit.common.widget.listview.ptr.PullToRefreshListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+    </com.yidingzhong.uikit.common.widget.listview.ptr.PullToRefreshListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="合计："
+            android:textSize="12sp"
+            android:textColor="#000000"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gwc_rmb"/>
+        <TextView
+            android:id="@+id/fees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F14038"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="金币"
+            android:textSize="12sp"
+            android:textColor="#666"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/gwc_j"/>
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F14038"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="积分"
+            android:textSize="12sp"
+            android:textColor="#666"/>
+        <ImageView
+            android:id="@+id/buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/gwc_js"/>
+    </LinearLayout>
 </LinearLayout>

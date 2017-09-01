@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars="none">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,23 +36,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="#efefef"
-            android:paddingBottom="4dp"
-            android:paddingTop="4dp"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp">
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/fill_white_borderless_corners_4">
+                android:background="@drawable/fill_white_borderless_corners_8">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:src="@drawable/duobao_area"/>
-                <TextView
-                    android:id="@+id/tv_duobao_area"
+                <ViewFlipper
+                    android:id="@+id/vf_duobao"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent"
+                    android:autoStart="true"
+                    android:background="#fff"
+                    android:flipInterval="2500"
+                    android:inAnimation="@anim/tv_down_in"
+                    android:outAnimation="@anim/tv_top_out" >
+                </ViewFlipper>
             </LinearLayout>
 
         </LinearLayout>
@@ -63,8 +72,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="6dp"
                 android:paddingBottom="6dp"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp"
+                android:paddingLeft="@dimen/home_margin"
+                android:paddingRight="@dimen/home_margin"
                 android:orientation="horizontal">
                 <!--充值好礼-->
                 <ImageView
@@ -103,8 +112,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="12dp"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp"
+                android:paddingLeft="@dimen/home_margin"
+                android:paddingRight="@dimen/home_margin"
                 android:orientation="horizontal">
                 <!--幸运抽奖-->
                 <ImageView
@@ -145,8 +154,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp">
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -161,7 +170,337 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/newest_jiexiao_tips"/>
         </RelativeLayout>
+        <com.yidingzhong.uikit.common.widget.gridview.ExpandGridView
+            android:id="@+id/gv_newest_jiexiao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin"
+            android:horizontalSpacing="3dp"
+            android:numColumns="2">
 
+        </com.yidingzhong.uikit.common.widget.gridview.ExpandGridView>
+        <com.yidingzhong.uikit.common.widget.gridview.ExpandGridView
+            android:id="@+id/gv_will_jiexiao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin"
+            android:layout_marginTop="@dimen/home_margin"
+            android:horizontalSpacing="3dp"
+            android:numColumns="2">
 
+        </com.yidingzhong.uikit.common.widget.gridview.ExpandGridView>
+
+        <!--积分赚不停-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/points_earn" />
+        <ImageView
+            android:id="@+id/iv_points_earn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="-3dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/points_earn_png"/>
+
+        <!--积分换不停-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/points_huan" />
+            <TextView
+                android:id="@+id/tv_points_huan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/more_with_icon"
+                android:textColor="@color/gray_9e9e9e"/>
+        </RelativeLayout>
+        <com.yidingzhong.uikit.common.widget.gridview.ExpandGridView
+            android:id="@+id/gv_points_huan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:background="@color/red"
+            android:horizontalSpacing="3dp"
+            android:verticalSpacing="3dp"
+            android:numColumns="2">
+
+        </com.yidingzhong.uikit.common.widget.gridview.ExpandGridView>
+
+        <!--晒单分享-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/publish_order" />
+            <TextView
+                android:id="@+id/tv_order_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/more_with_icon"
+                android:textColor="@color/gray_9e9e9e"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin"
+            android:background="@color/gray_a3a3a3"/>
+        <LinearLayout
+            android:id="@+id/share_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/home_margin"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/avatar_share"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    app:roundAsCircle="true"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/share_name"
+                            android:textColor="#8E8E8E"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_user_level"/>
+                        <TextView
+                            android:id="@+id/share_user_level"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="-3dp"
+                            android:textColor="@color/red"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/share_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8E8E8E"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/share_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8E8E8E"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+关注"
+                    android:textColor="#E8403F"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:background="@drawable/fill_pink_red_border"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/share_content"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_height="wrap_content"
+                android:textColor="#585858"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="4dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/share_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lottery"/>
+                <TextView
+                    android:id="@+id/share_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#64A2EF"
+                    android:textSize="10sp"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="horizontal">
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:viewAspectRatio="1"/>
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    app:viewAspectRatio="1"/>
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:viewAspectRatio="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/home_margin"
+                android:layout_marginRight="@dimen/home_margin"
+                android:background="@drawable/fill_white_gray_border_normal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_eye"/>
+                    <TextView
+                        android:id="@+id/check_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_a3a3a3"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="14dp"
+                    android:background="@color/gray_a3a3a3"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_comment"/>
+                    <TextView
+                        android:id="@+id/comment_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_a3a3a3"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="14dp"
+                    android:background="@color/gray_a3a3a3"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_favorite"/>
+                    <TextView
+                        android:id="@+id/favorite_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_a3a3a3"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--最新上架-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/newest_lottery" />
+            <TextView
+                android:id="@+id/tv_lottery_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/more_with_icon"
+                android:textColor="@color/gray_9e9e9e"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginRight="@dimen/home_margin"
+            android:background="@color/gray_a3a3a3"/>
+        <com.yidingzhong.uikit.common.widget.gridview.ExpandGridView
+            android:id="@+id/lv_newest_lottery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/home_margin"
+            android:layout_marginLeft="@dimen/home_margin"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:horizontalSpacing="4dp"
+            android:verticalSpacing="3dp"
+            android:numColumns="2"
+            android:listSelector="@android:color/transparent">
+
+        </com.yidingzhong.uikit.common.widget.gridview.ExpandGridView>
     </LinearLayout>
 </ScrollView>

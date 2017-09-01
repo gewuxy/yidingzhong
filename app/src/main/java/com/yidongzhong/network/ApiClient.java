@@ -5,9 +5,15 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+import com.yidongzhong.duobao.model.CategoryLotteryInfo;
+import com.yidongzhong.duobao.model.DuoBaoDetailInfo;
+import com.yidongzhong.duobao.model.LatestLotteryInfo;
 import com.yidongzhong.main.model.HomeInfo;
+import com.yidongzhong.main.model.HomeSubInfo;
 import com.yidongzhong.network.exception.ServerException;
 import com.yidongzhong.network.gson.CustomGsonConverterFactory;
+import com.yidongzhong.points.activity.PointsMallInfo;
+import com.yidongzhong.region.model.RegionInfo;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -89,6 +95,66 @@ public class ApiClient {
         return api.getHomeInfo()
                 .map(new ServerResultFunc<HomeInfo>())
                 .onErrorResumeNext(new HttpResultFunc<HomeInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<HomeSubInfo> getHomeSubInfo(){
+        return api.getHomeSubInfo()
+                .map(new ServerResultFunc<HomeSubInfo>())
+                .onErrorResumeNext(new HttpResultFunc<HomeSubInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<LatestLotteryInfo> getLatestLottery(){
+        return api.getLatestLottery()
+                .map(new ServerResultFunc<LatestLotteryInfo>())
+                .onErrorResumeNext(new HttpResultFunc<LatestLotteryInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<RegionInfo> getRegionInfo(int flag){
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("flag",flag);
+        return api.getRegionInfo(params)
+                .map(new ServerResultFunc<RegionInfo>())
+                .onErrorResumeNext(new HttpResultFunc<RegionInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<CategoryLotteryInfo> getProductByCategory(int flag){
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("flag",flag);
+        return api.getProductByCategory(params)
+                .map(new ServerResultFunc<CategoryLotteryInfo>())
+                .onErrorResumeNext(new HttpResultFunc<CategoryLotteryInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<DuoBaoDetailInfo> getProductDetailById(int id){
+        HashMap<String,Object> params = new HashMap<>();
+        params.put("id",id);
+        return api.getProductDetailById(params)
+                .map(new ServerResultFunc<DuoBaoDetailInfo>())
+                .onErrorResumeNext(new HttpResultFunc<DuoBaoDetailInfo>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<PointsMallInfo> getPointsMallInfo(){
+        return api.getPointsMallInfo()
+                .map(new ServerResultFunc<PointsMallInfo>())
+                .onErrorResumeNext(new HttpResultFunc<PointsMallInfo>())
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

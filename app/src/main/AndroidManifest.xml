@@ -70,13 +70,91 @@
         <activity
             android:name=".account.activity.LoginActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".account.activity.RegisterActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".main.activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".main.activity.ScanActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.activity.PointsEarnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.activity.ForgetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".charge.activity.ReChargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".duobao.activity.LatestLotteryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".product.activity.ProductProcessingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".product.activity.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".region.activity.RegionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".comment.CommentDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".duobao.activity.DuoBaoDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".dailycheck.activity.DailyCheckActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".duobao.activity.ToBePublishedActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".account.activity.ShippingAddressActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".redpacket.activity.RedPacketActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".charge.activity.ReChargeRecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".points.activity.PointsRecordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".system.SystemMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".framework.CommonWebViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".points.activity.PointsMallActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".points.activity.PointsMallDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".duobao.activity.ShareActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".redpacket.activity.RedPacketDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".dailycheck.activity.DailyCheckTipsActivity"
+            android:screenOrientation="portrait"/>
 
+        <!-- bugly start -->
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="69bcd1f57e" />
+        <!-- 配置APP版本号 -->
+        <!--<meta-data-->
+        <!--android:name="BUGLY_APP_VERSION"-->
+        <!--android:value="2" />-->
+        <!-- 配置APP渠道号 -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="official" />
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="false" />
+
+        <!--乐固多渠道打包-->
+        <meta-data
+            android:name="channelForLegu"
+            android:value="1" />
+        <!-- bugly end -->
     </application>
 
 </manifest>

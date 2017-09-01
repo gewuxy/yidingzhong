@@ -8,6 +8,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.listener.RequestListener;
 import com.facebook.imagepipeline.listener.RequestLoggingListener;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,5 +40,9 @@ public class App extends Application {
                 .setRequestListeners(requestListeners)
                 .build();
         Fresco.initialize(this, config);
+
+        //bugly
+        CrashReport.initCrashReport(getApplicationContext());
+        CrashReport.setAppVersion(getApplicationContext(), BuildConfig.VERSION_NAME);
     }
 }

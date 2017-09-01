@@ -70,6 +70,51 @@ public class HomeInfo {
         private String lotteryName;
         private int id;
         private List<ProductPicsBean> productPics;
+        private String province;
+        private String city;
+        private String pageViewCount;
+        private String commentCount;
+        private String likeCount;
+
+        public String getCity() {
+            return city;
+        }
+
+        public void setCity(String city) {
+            this.city = city;
+        }
+
+        public String getPageViewCount() {
+            return pageViewCount;
+        }
+
+        public void setPageViewCount(String pageViewCount) {
+            this.pageViewCount = pageViewCount;
+        }
+
+        public String getCommentCount() {
+            return commentCount;
+        }
+
+        public void setCommentCount(String commentCount) {
+            this.commentCount = commentCount;
+        }
+
+        public String getLikeCount() {
+            return likeCount;
+        }
+
+        public void setLikeCount(String likeCount) {
+            this.likeCount = likeCount;
+        }
+
+        public String getProvince() {
+            return province;
+        }
+
+        public void setProvince(String province) {
+            this.province = province;
+        }
 
         public String getMemberNickName() {
             return memberNickName;

@@ -19,23 +19,12 @@ import com.yidingzhong.uikit.common.permission.annotation.OnMPermissionGranted;
 import com.yidingzhong.uikit.common.widget.toolbar.ToolBarOptions;
 import com.yidongzhong.R;
 import com.yidongzhong.account.activity.LoginActivity;
-import com.yidongzhong.account.util.LogoutHelper;
+import com.yidongzhong.account.util.AccountUtil;
 import com.yidongzhong.main.fragment.CategoryFragment;
 import com.yidongzhong.main.fragment.HomeFragment;
 import com.yidongzhong.main.fragment.LatestLotteryFragment;
 import com.yidongzhong.main.fragment.MyCenterFragment;
 import com.yidongzhong.main.fragment.ShoppingCarFragment;
-import com.yidongzhong.network.ApiClient;
-import com.yidongzhong.network.HttpResultFunc;
-import com.yidongzhong.network.ServerResultFunc;
-import com.yidongzhong.network.exception.ApiException;
-import com.yidongzhong.network.observer.HttpObserver;
-
-import java.util.HashMap;
-
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by zex on 2017/8/13.
@@ -135,7 +124,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     // 注销
     private void onLogout() {
         // 清理缓存&注销监听
-        LogoutHelper.logout();
+        AccountUtil.logout();
 
         //JPush clear Alias
         /*JPushInterface.setAlias(MainActivity.this, "", new TagAliasCallback() {
@@ -253,6 +242,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void showShoppingCarFragment(){
+        if(!AccountUtil.isLogin()){
+            startActivity(new Intent(this,LoginActivity.class));
+            return;
+        }
         if(currentFragment == shoppingCarFragment && currentFragment != null) return;
         FragmentTransaction ft= getSupportFragmentManager().beginTransaction();
         if(currentFragment != null) ft.hide(currentFragment);
@@ -294,10 +287,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         currentFragment = myCenterFragment;
         updateBottomSheet(5);
 
-        ToolBarOptions options = new ToolBarOptions();
-        options.titleId = R.string.wode;
-        options.isNeedNavigate = false;
-        setToolBar(R.id.toolbar, options);
+//        ToolBarOptions options = new ToolBarOptions();
+//        options.titleId = R.string.wode;
+//        options.isNeedNavigate = false;
+//        setToolBar(R.id.toolbar, options);
+        findView(R.id.toolbar).setVisibility(View.GONE);
     }
 
     private void updateBottomSheet(int index){

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="14dp"
+    android:layout_marginRight="15dp">
+    <ImageView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="14dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/shdz_tb"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/location"
+        android:layout_marginTop="29dp"
+        android:textColor="#333"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="29dp"
+        android:textColor="#333"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/location"
+        android:layout_below="@id/name"/>
+    <TextView
+        android:layout_below="@id/address"
+        android:layout_toRightOf="@id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF6000"
+        android:textSize="10sp"
+        android:text="@string/address_tips"/>
+
+</RelativeLayout>

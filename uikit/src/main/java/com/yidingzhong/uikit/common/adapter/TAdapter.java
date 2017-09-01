@@ -21,7 +21,7 @@ import java.util.Set;
 public class TAdapter<T> extends BaseAdapter implements IViewReclaimer  {
     protected final Context context;
 
-    private List<T> items;              //remove final
+    protected List<T> items;              //remove final
 
     private final TAdapterDelegate delegate;
 

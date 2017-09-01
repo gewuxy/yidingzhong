@@ -30,6 +30,59 @@
         <item name="searchIcon">@null</item>
         <!-- Go/commit button icon -->
     </style>
+    <style name="settings_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/list_item_selector</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="zjhm">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">#ee4646</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">4dp</item>
+    </style>
+    <style name="choujiang_footer_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="choujiang_footer_item_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#cc000000</item>
+    </style>
+    <style name="choujiang_footer_item_sub_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#B9B9B9</item>
+    </style>
+    <style name="points_mall_little_image">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="register_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">22dp</item>
+        <item name="android:background">@drawable/gray_bottom_border</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 
     <color name="gray_9e9e9e">#9e9e9e</color>
 </resources>

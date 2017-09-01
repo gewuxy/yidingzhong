@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_margin">6dp</dimen>
+    <dimen name="lottery_margin">6dp</dimen>
+    <dimen name="duobao_detail_margin">18dp</dimen>
+    <dimen name="points_mall_detail_margin">15dp</dimen>
+    <dimen name="daily_check_explanation_margin">5dp</dimen>
+</resources>
